@@ -1,0 +1,10 @@
+language: java
+jdk:
+  - oraclejdk8
+addons:
+  sonarqube:
+    organization: "jdev" #Here must be the name of organization
+    token:
+        secure: ba44e78708e037340de91a0b0c26d1f8c9071a54 #Token 
+script:
+  - sonar-scanner

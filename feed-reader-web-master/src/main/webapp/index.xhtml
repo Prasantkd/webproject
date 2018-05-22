@@ -1,0 +1,49 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Feed Reader</title>
+        
+        <!--Add Materialize for nice format-->
+        
+        <!-- Compiled and minified CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/css/materialize.min.css" />
+
+        <!--Import jQuery before materialize.js-->
+        <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+        
+        <!-- Compiled and minified JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/js/materialize.min.js"></script>
+
+    </h:head>
+    <h:body>
+        <div class="container">
+            <h4>Travis Ci with Sonar example!</h4>
+        </div>
+        <h:form>
+            <div class="row">
+                <p:feedReader value="https://www.youtube.com/feeds/videos.xml?channel_id=UCmTo3RyFzlcox7lx0CVl3ww"
+                    var="feed">
+                    <div class="col s12 m3 l4">
+                        <div class="card">
+                            <div class="card-image">
+                                <a href="#{feed.link}" target="_blank">
+                                    <img src="#{feedBean.imageOf(feed.link)}" />
+                                </a>
+                            </div>
+                            <div class="card-action">
+                                <a href="#{feed.link}" target="_blank" class="truncate blue-text">
+                                    #{feed.title}
+                                </a>
+                            </div>
+                        </div>
+                    </div>      
+                </p:feedReader>
+            </div>
+        </h:form>
+    </h:body>
+</html>
+
